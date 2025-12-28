@@ -3,180 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDETXDMHZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>Live Streaming Bola</title>
 
-  gtag('config', 'G-KDETXDMHZ0');
-</script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDETXDMHZ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Open Graph -->
+  <meta property="og:title" content="Live Streaming Bola" />
+  <meta property="og:description" content="Saksikan live streaming pertandingan sepak bola hari ini secara gratis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="og-image.jpg" />
 
-  gtag('config', 'G-KDETXDMHZ0');
-</script>
-  <title>Videy.biz.id</title>
-
-<!-- Open Graph -->
-<meta property="og:title" content="Videy " />
-<meta property="og:description" content="Lemas karena terlalu banyak keluar." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="orpan.jpg" />
-  
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
+      background: #0b1220;
       color: #e5e7eb;
     }
     header {
-      padding: 20px;
+      background: linear-gradient(90deg, #0f172a, #020617);
+      padding: 16px;
       text-align: center;
-      background: #020617;
       border-bottom: 1px solid #1e293b;
     }
     header h1 {
       margin: 0;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
     .container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-      padding: 20px;
       max-width: 1200px;
       margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
     }
-    .player {
+    .live-player {
       background: #020617;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,.5);
     }
-    .player video {
+    .live-player iframe {
       width: 100%;
-      height: auto;
+      height: 420px;
+      border: none;
       background: black;
     }
-    .player .title {
-      padding: 12px 16px;
-      font-size: 1rem;
+    .match-info {
+      padding: 14px 18px;
       border-top: 1px solid #1e293b;
     }
-    .playlist {
-      background: #020617;
-      border-radius: 10px;
-      overflow-y: auto;
-      max-height: 520px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    .match-info h2 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
     }
-    .playlist h2 {
+    .badge-live {
+      display: inline-block;
+      background: #dc2626;
+      color: white;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin-left: 6px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: .5; }
+      100% { opacity: 1; }
+    }
+    .sidebar {
+      background: #020617;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+    .sidebar h3 {
       margin: 0;
       padding: 14px 16px;
-      font-size: 1rem;
       border-bottom: 1px solid #1e293b;
+      font-size: 1rem;
     }
-    .playlist ul {
+    .match-list {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
-    .playlist li {
+    .match-list li {
       padding: 12px 16px;
       border-bottom: 1px solid #1e293b;
       cursor: pointer;
       transition: background .2s;
     }
-    .playlist li:hover {
+    .match-list li:hover {
       background: #020617;
     }
-    .playlist li.active {
+    .match-list li.active {
       background: #1d4ed8;
     }
     footer {
       text-align: center;
       padding: 16px;
-      font-size: 0.85rem;
+      font-size: .85rem;
       color: #94a3b8;
     }
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
       }
-      .playlist {
-        max-height: none;
+      .live-player iframe {
+        height: 240px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Videy.biz.id</h1>
+    <h1> Videy.biz.id</h1>
   </header>
 
   <main class="container">
-    <section class="player">
-      <video id="videoPlayer" controls>
-        <source src="https://myvidplay.com/e/efad5awqy0ok
-" type="video/mp4" />
-        Browser Anda tidak mendukung video.
-      </video>
-      <div class="title" id="videoTitle">Cewe Hijab Gak Tahan Sange Berat</div>
+    <section class="live-player">
+      <iframe width="600" height="480" src="https://myvidplay.com/e/efad5awqy0ok" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+      <div class="match-info">
+        <h2 id="matchTitle">Goyangan Nikmat Bikin Ngillu<span class="badge-live">LIVE</span></h2>
+        <div id="matchTime">Jika error silahkan refresh</div>
+      </div>
     </section>
 
-    <aside class="playlist">
-      <h2>Video bokep lainnya</h2>
-      <ul id="playlist">
-        <li class="active" data-src="https://vdownload-50.sb-cd.com/1/6/16024269-720p.mp4?secure=SWkkswBdgApYSP5uzEZf8w,1766893930&m=50&d=1&_tid=16024269">Cewe Hijab Gak Tahan Sange Berat</li>
-        <li data-src="https://hglink.to/e/odnnle7zvzai">Bunda hijab nakal</li>
-        <li data-src="https://vdownload-49.sb-cd.com/1/5/15132068-720p.mp4?secure=wi6EwIAxg71s8O9DTlv9OQ,1766794109&m=49&d=1&_tid=15132068">Hijabku suka isap ( indo hijab )</li>
-        <li data-src="https://vdownload-41.sb-cd.com/1/3/13374940-720p.mp4?secure=z825sQ5BcMGEkHouAbHjRA,1766794307&m=41&d=1&_tid=13374940">Hanni Toge Comek Crot Sampe Puas</li>
-        <li data-src="https://vdownload-41.sb-cd.com/1/3/13097170-720p.mp4?secure=vbrKJ5iqzVJg9aZPrMOM8g,1766794433&m=41&d=1&_tid=13097170">Tante cantik digenjot sampe keluar didalam</li>
-        <li data-src="https://vdownload-50.sb-cd.com/1/5/15720589-720p.mp4?secure=rmSZs3vc4bmBmQVdnBY7HQ,1766794546&m=50&d=1&_tid=15720589
-">Selingkuh dikosan adu mekanik sampe lemas</li>
-        <li data-src="https://vdownload-50.sb-cd.com/1/3/13796089-720p.mp4?secure=do04GfJThzGy2Zy5IONhLg,1766794682&m=50&d=1&_tid=13796089">Anak SMA Jilbab Hyper</li>
-        <li data-src="https://vdownload-46.sb-cd.com/1/5/15733665-720p.mp4?secure=6BS_BD8uy-NzVrnJk45QWA,1766794779&m=46&d=1&_tid=15733665">Mahasiswi lgi diajarin caranya ngentot</li>
-        <li data-src="https://vdownload-7.sb-cd.com/4/3/4384985-480p.mp4?secure=Hh83UHcsIiJ17RBXtRhcCw,1766794943&m=7&d=1&_tid=4384985
-Request Method
-">Hijab Kacamata Colmek Sampe Lemas</li>
-        <li data-src="https://vdownload-43.sb-cd.com/1/4/14885582-720p.mp4?secure=OphqE-nkcA5rNgkFd9agbg,1766795101&m=43&d=1&_tid=14885582
-">Cewek Jilbab Klimaks di ewe pacar dihotel</li>
-        <li data-src="https://vdownload-50.sb-cd.com/1/5/15315059-720p.mp4?secure=KPzA01Sns9SMSfA16R75pA,1766795205&m=50&d=1&_tid=15315059">Gak tahan ngewe sampe crot cewenya</li>
-        <li data-src="https://vdownload-39.sb-cd.com/3/9/3966875-480p.mp4?secure=MN16BPOeqSzeeDTm2ECBng,1766795347&m=39&d=6&_tid=3966875">Cewek melayu sange berat</li>
+    <aside class="sidebar">
+      <h3>Pertandingan Hari Ini</h3>
+      <ul class="match-list" id="matchList">
+        <li class="active" data-src="https://example.com/live-stream" data-title="Team A vs Team B" data-time="Kick Off: 19.30 WIB">Team A vs Team B</li>
+        <li data-src="https://example.com/live-stream2" data-title="Team C vs Team D" data-time="Kick Off: 21.00 WIB">Team C vs Team D</li>
+        <li data-src="https://example.com/live-stream3" data-title="Team E vs Team F" data-time="Kick Off: 23.00 WIB">Team E vs Team F</li>
       </ul>
     </aside>
   </main>
 
   <footer>
-    © 2025 - Videy.biz.id | Free Hot Videos
+    © 2025 Videy.co | Hot Video
   </footer>
 
   <script>
-    const video = document.getElementById('videoPlayer');
-    const title = document.getElementById('videoTitle');
-    const items = document.querySelectorAll('#playlist li');
+    const frame = document.getElementById('liveFrame');
+    const title = document.getElementById('matchTitle');
+    const time = document.getElementById('matchTime');
+    const matches = document.querySelectorAll('#matchList li');
 
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        items.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        const src = item.getAttribute('data-src');
-        video.src = src;
-        title.textContent = item.textContent;
-        video.play();
+    matches.forEach(match => {
+      match.addEventListener('click', () => {
+        matches.forEach(m => m.classList.remove('active'));
+        match.classList.add('active');
+        frame.src = match.dataset.src;
+        title.innerHTML = match.dataset.title + ' <span class="badge-live">LIVE</span>';
+        time.textContent = match.dataset.time;
       });
     });
   </script>
-  <script async="async" data-cfasync="false" src="https://prodtrousers.com/9eabca3e8b0bbd8c0209af06451f751c/invoke.js"></script>
-<div id="container-9eabca3e8b0bbd8c0209af06451f751c"></div>
-  <script src="https://prodtrousers.com/d7/6a/f4/d76af441b685b0465b3f3fafdc4b0db4.js"></script>
-  <script src="https://prodtrousers.com/07/6b/39/076b39c4c23fb333e60bbf5111015290.js"></script>
 </body>
 </html>
